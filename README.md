@@ -17,23 +17,32 @@ ConectMe offers a rich set of features to enhance your social media experience:
 9. 🔒 Privacy and Security: Rest assured that your personal information is protected with advanced privacy and security measures.
 10. 🔐 Privacy Settings: Take control of your content visibility, follower access, and direct message permissions with customizable privacy settings.
 
-## 🚀 Getting Started
+## :rocket: Getting Started
 
-To begin your ConectMe experience, follow these simple steps:
+To get started with this gaming hub management system, follow these steps:
 
-1. Clone this repository to your local machine.
-2. Install the required dependencies as mentioned in the project documentation.
-3. Set up the necessary configurations and ensure SFML is properly integrated.
-4. Compile and run the application on your desktop.
+1. :arrow_down: Download or clone the repository to your local machine.
+2. :gear: Install the SFML library and ensure it is properly set up in your C++ development environment.
+3. :file_folder: Add the necessary SFML library and header files to your project.
+4. :hammer_and_wrench: Build and compile the project using your preferred C++ compiler.
+5. :running: Run the executable file generated after successful compilation.
+6. :art: Customize the system as per your gaming hub requirements, such as adding new games or expanding the features.
 
-Now, embark on a new era of connection and sharing with ConectMe! 🌟📲
+That's it! You are now ready to use the gaming hub management system. Feel free to explore the functionality and make any further modifications according to your needs.
 
+Please note that you might need to refer to the documentation or specific instructions provided by the SFML library for the installation and setup process.
+
+## :heavy_exclamation_mark: Dependencies
+
+This project utilizes the following dependencies:
+
+- C++ 
+- SFML 
+
+Make sure you have the required dependencies installed in your development environment to successfully build and run the project.
 ## 🤝 Contributing
 
 We welcome contributions from the community to help improve ConectMe. If you have any suggestions, bug fixes, or exciting new features to add, please feel free to open an issue or submit a pull request. Let's make ConectMe the best social media platform together! 🌟🚀
 
-## 📃 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 Join ConectMe today and connect with friends, share your stories, and discover endless possibilities! 🌐🤩
