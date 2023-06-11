@@ -3,17 +3,17 @@
 #include "TextBox.h"
 #include"Header.h"
 using namespace sf;
-bool check(string a, string b,string &d)
+bool check(string a, string b, string& d)
 {
 	ifstream fin("userName.txt");
 	ifstream fn("userPassword.txt");
 	ifstream f("userEmail.txt");
 
-    string email, password;
+	string email, password;
 
-	while (getline(fin, email) && getline(fn, password),getline(f,d)) {
+	while (getline(fin, email) && getline(fn, password), getline(f, d)) {
 		if (email.length() != a.length() || password.length() != b.length()) {
-			continue; 
+			continue;
 		}
 
 		bool match = true;
@@ -43,28 +43,48 @@ bool check(string a, string b,string &d)
 }
 bool check1(string a)
 {
-ifstream fin("userName.txt");
-ifstream fn("userPassword.txt");
+	ifstream fin("userName.txt");
+	ifstream fn("userPassword.txt");
 
-string email, password;
+	string email, password;
 
-while (getline(fin, email)) {
-	if (email.length() != a.length() ) {
-		continue;
-	}
-	bool match = true;
-	for (int i = 0; i < email.length(); i++) {
-		if (email[i] != a[i]) {
-			match = false;
-			break;
+	while (getline(fin, email)) {
+		if (email.length() != a.length()) {
+			continue;
+		}
+		bool match = true;
+		for (int i = 0; i < email.length(); i++) {
+			if (email[i] != a[i]) {
+				match = false;
+				break;
+			}
+		}
+		if (match) {
+			return true;
 		}
 	}
-	if (match) {
-		return true;
-	}
-}
 
-return false;
+	return false;
+}
+bool check3(string a) {
+	bool flag = 0; int temp = 0;
+	char arr[] = { "@gmail.com" };
+	for (int i = 0; i < a.length(); i++) {
+		if (a[i] == arr[0]) {
+			for (int j = 1, k = i + 1; j < strlen(arr), k < a.length(); k++, j++) {
+				if (arr[j] != a[k]) {
+					flag = 0;
+					break;
+				}
+				flag = 1;
+				temp++;
+			}
+		}
+	}
+	if (flag && temp == 9) {
+		return 0;
+	}
+	return 1;
 }
 bool check2(string a) {
 
@@ -73,7 +93,7 @@ bool check2(string a) {
 	string email;
 
 	while (getline(fin, email)) {
-		if (email.length() != a.length() ) {
+		if (email.length() != a.length()) {
 			continue;
 		}
 
@@ -85,7 +105,7 @@ bool check2(string a) {
 			}
 		}
 
-		
+
 
 		if (match) {
 			return true;
@@ -108,7 +128,7 @@ scn4 scene9;
 bool first = true;
 int main()
 {
-	 user u_obj;
+	user u_obj;
 	//u_obj.setuserName("a");
 	//u_obj.loadMemory();
 	//int count = u_obj.getfriendcount();
@@ -128,7 +148,7 @@ int main()
 
 	RenderWindow window(VideoMode(1000, 955), "ConnectMe");
 
-	Texture r1, r2, r3, r3a, r3b, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17,r18,r19,r20,r21;
+	Texture r1, r2, r3, r3a, r3b, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21;
 
 	r1.loadFromFile("Connect Me.png");
 	r2.loadFromFile("Select.png");
@@ -281,7 +301,7 @@ int main()
 	Text useremail("", arial, 22);
 	useremail.setFillColor(Color::Black);
 	useremail.setPosition(245, 127);
-	
+
 	Text postcount("", arial, 24);
 	postcount.setFillColor(Color::Black);
 	postcount.setPosition(772, 87);
@@ -295,7 +315,7 @@ int main()
 	p_caption1.setFillColor(Color::Black);
 	p_caption1.setPosition(190, 247);
 
-	bool flag = 0, flag3 = 0,flag4=0;
+	bool flag = 0, flag3 = 0, flag4 = 0;
 	int temp = 0;
 
 	while (window.isOpen())
@@ -437,7 +457,7 @@ int main()
 					{//AccountCreated
 						if (x >= 320 && x <= 670 && y >= 645 && y <= 725)
 							scene = 1;
-				}
+					}
 					else if (scene == 12) {
 						//back
 						if (x >= 20 && x <= 105 && y >= 25 && y <= 95)
@@ -671,24 +691,24 @@ int main()
 						{
 							string e = addfrd.getText();
 
-							if (e.empty() == false )
+							if (e.empty() == false)
 							{
-							
-							ifstream f(addfrd.getText() + "postcount.txt");
-							int num, num2;
-							f >> num;
-							f >> num2;
-							f.close();
-							ofstream fw(addfrd.getText() + "postcount.txt");
-							fw << num << endl << ++num2;
-							fw.close();
-							ofstream f1(addfrd.getText() + "friends.txt",ios::app);
-							f1 << u_obj.getuserName() << endl;
-							f1.close();
 
-							addfriend.setTexture(r15);
+								ifstream f(addfrd.getText() + "postcount.txt");
+								int num, num2;
+								f >> num;
+								f >> num2;
+								f.close();
+								ofstream fw(addfrd.getText() + "postcount.txt");
+								fw << num << endl << ++num2;
+								fw.close();
+								ofstream f1(addfrd.getText() + "friends.txt", ios::app);
+								f1 << u_obj.getuserName() << endl;
+								f1.close();
+
+								addfriend.setTexture(r15);
+							}
 						}
-					}
 
 					}
 					else if (scene == 9)
@@ -720,17 +740,19 @@ int main()
 						}//userpost
 						if (x >= 295 && x <= 660 && y >= 30 && y <= 127)
 						{
-							scene = 14; m = 0;
-							r21.loadFromFile(u_obj.getpostpicId(m) + ".jpg");
-							userpost1.setTexture(r21);
-							userpost1.setPosition(145, 280);
-							userpost1.setScale(0.695f, 0.54f);
+							scene = 14; m = 0; if (u_obj.getpostCount() > 0) {
+								r21.loadFromFile(u_obj.getpostpicId(m) + ".jpg");
+								userpost1.setTexture(r21);
+								userpost1.setPosition(145, 280);
+								userpost1.setScale(0.695f, 0.54f);
+								p_caption1.setString(u_obj.getposttxt(m));
+
+							}
 							f_name1.setString(u_obj.getuserName());
-							p_caption1.setString(u_obj.getposttxt(m));
 
 						}
 						//nextpost
-						if (count1> 0) {
+						if (count1 > 0) {
 							if (x >= 890 && x <= 974 && y >= 520 && y <= 589)
 							{
 								//flag = 0;
@@ -749,9 +771,7 @@ int main()
 								r12.loadFromFile(u1.getpostpicId(m) + ".jpg");
 								post1.setTexture(r12);
 								post1.setPosition(145, 280);
-
 								post1.setScale(0.695f, 0.41f);
-
 								f_name.setString(u1.getuserName());
 								p_caption.setString(u1.getposttxt(m));
 
@@ -823,7 +843,7 @@ int main()
 						//submit
 						if (x >= 205 && x <= 755 && y >= 850 && y <= 896)
 						{
-							string e, ce, p, cp,d;
+							string e, ce, p, cp, d;
 							e = textRegisterEmail.getText();
 							ce = textRegisterConfirmEmail.getText();
 							p = textRegisterPassword.getText();
@@ -838,7 +858,9 @@ int main()
 									{
 										valid = true;
 									}
-
+									if (check3(e)) {
+										valid = 1;
+									}
 									if (valid)
 									{
 										scene = 6;
@@ -846,13 +868,13 @@ int main()
 									else
 									{
 										ofstream fout("userName.txt", ios::app);
-										fout << ce<<endl;
+										fout << ce << endl;
 										fout.close();
 										ofstream fw("userPassword.txt", ios::app);
-										fw << p<<endl;
+										fw << p << endl;
 										fw.close();
 										ofstream f("userEmail.txt", ios::app);
-										f << e<<endl;
+										f << e << endl;
 										f.close();
 
 										scene = 7;
@@ -1133,7 +1155,7 @@ int main()
 				window.draw(comment);
 			window.draw(com);
 			addcom.setPosition({ 170,701 });
-		   addcom.drawTo(window);
+			addcom.drawTo(window);
 		}
 		else if (scene == 14) {
 			window.draw(userpost);
@@ -1144,7 +1166,7 @@ int main()
 			window.draw(f_name1);
 			window.draw(p_caption1);
 
-			}
+		}
 		window.display();
 	}
 
