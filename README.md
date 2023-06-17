@@ -10,7 +10,7 @@ ConectMe offers a rich set of features to enhance your social media experience:
 2. 🖼️ Profile Customization: Personalize your profile with a stunning profile picture and share essential personal information.
 3. ✨ Friends and Followers: Connect with others by sending friend requests and following fellow users.
 4. 📰 News Feed: Stay up-to-date with a dynamic news feed that displays posts from your friends.
-5. ✍️ Post Creation: Express yourself by creating and sharing engaging posts, including text and photos. (Not confirmed feature)
+5. ✍️ Post Creation: Express yourself by creating and sharing engaging posts, including text and photos.
 6. ❤️🗨️ Like and Comment: Interact with posts from other users by liking and leaving thoughtful comments.
 7. ✉️ Direct Messaging: Engage in private conversations by sending and receiving direct messages.
 8. 🔍 Search: Easily discover other users on the platform through a convenient search feature.
